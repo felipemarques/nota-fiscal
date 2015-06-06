@@ -18,10 +18,10 @@ class CreateNotaFiscaisTable extends Migration {
 
             $table->date('data_emissao')->nullable();
 
-            $table->integer('venda_id')->unsigned()->nullable();
+            $table->integer('venda_id')->unsigned();
             $table->foreign('venda_id')->references('id')->on('vendas');
 
-            $table->string('chave')->nullable();
+            $table->string('chave')->nullable()->unique();
             $table->integer('modelo')->nullable();
             $table->integer('numero')->nullable();
             $table->integer('serie')->nullable();
